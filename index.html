@@ -3,8 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <title>Проект</title>
+    <script src="./lib/lodash.js"></script>
+    <link rel="stylesheet" href="./lib/pure.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <h1>Привет мир!!!</h1>
+
+    <div class="container"></div>
+
+    <script type="text/template" id="menu-template">
+        <div class="menu">
+      <span class="menu__title js-title">
+      <span class="arrow__right">▶</span>
+      <span class="arrow__down">▼</span>
+        <%- title %>
+      </span>
+            <ul class="menu__list">
+                <% options.forEach(function (item) { %>
+                <li><a href="<%- item.href %>"><%- item.title %></a></li>
+                <% }); %>
+            </ul>
+        </div>
+    </script>
+
+    <script src="./menu.js"></script>
+
+    <script>
+        let menu = new Menu(document.querySelector('.container'), {
+            title: 'Привет мир',
+            options: [
+                {
+                    title: 'hello google',
+                    href: '/hello', img: {
+
+                    src: 'https://www.google.ru/images/branding/googlelogo/2x/googlelogo_color_120x44dp.png',
+                    title: 'google'
+
+                }}
+            ]
+        });
+    </script>
+
 </body>
 </html>
