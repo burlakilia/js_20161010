@@ -1,0 +1,20 @@
+{
+  "name": "js_20161010",
+  "version": "1.0.0",
+  "description": "Учебный проект по группе learn.javascript.ru",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/burlakilia/js_20161010.git"
+  },
+  "keywords": [],
+  "author": "Burlak Ilia <burlakilia@bk.ru>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/burlakilia/js_20161010/issues"
+  },
+  "homepage": "https://github.com/burlakilia/js_20161010#readme"
+}
