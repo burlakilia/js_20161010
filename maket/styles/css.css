@@ -1,0 +1,256 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  list-style: none;
+}
+
+
+body {
+  font-family: "Open Sans";
+  font-size: 14px;
+  /*background-image: url("../img/grid.png") */
+}
+
+strong {
+  font-weight: bold;
+}
+  
+.sideBar {
+  display: inline-block;
+  position: absolute;
+  width: 200px;
+  height: 100%;
+  padding: 0 0 0 40px;
+}
+  
+.logo {
+  height: 59px;
+}
+  
+.logo img {}
+  
+.logo img:first-child {
+  float: left;
+  margin-top: 22px;
+}
+  
+.logo img:last-child {
+  float: right;
+  margin-top: 18px;
+}
+
+hr {
+  border: none;
+  padding: 0;
+  margin: 0;
+  height: 1px;
+  background: #F2F2F2;
+}
+  
+
+  
+ul {
+  margin-top: 17px;
+}
+  
+
+  
+ul li {
+  padding: 7px 0 7px 0;
+}
+  
+
+  
+ul li ul {
+  margin-top: 5px;
+  margin-left: 20px;
+}
+
+
+        
+
+.search input[type="text"] {
+  box-sizing: border-box;
+  width: 240px;
+  height: 40px;
+  border: 1px solid #E8E8E8;
+  margin: 21px 0 0 -20px;
+  padding: 0 0 2px 20px;
+  font-family: "Open Sans";
+  font-size: 14px;
+  color: black;
+  outline: none;
+  border-radius: 3px;
+}
+
+
+        
+
+.search input[type="text"] :-ms-input-placeholder {
+  color: black;
+}
+
+
+        
+
+.search input[type="text"] :-moz-placeholder {
+  color: black;
+}
+
+
+        
+
+.search input[type="text"]::-webkit-input-placeholder {
+  color: black;
+}
+
+
+        
+
+.search input[type="text"]::-moz-placeholder {
+  color: black;
+}
+
+
+        
+
+.search button {
+  position: absolute;
+}
+
+
+        
+
+.search img {
+  position: absolute;
+  margin: -26px 0 0 185px;
+}
+
+.exit hr {
+  margin-top: 20px;
+}
+
+.spaceOfNotes {
+  width: 100%;
+  height: 100%;
+  margin: 0 0 0 280px;
+  padding: 20px;
+}
+
+.spaceOfNotes .note {
+  cursor: move;
+  position: relative;
+  margin: 20px;
+  width: 280px;
+  height: 180px;
+}
+
+.spaceOfNotes .note .icoClose {
+  display: none;
+  cursor: pointer;
+}
+
+.spaceOfNotes .note textarea {
+  box-sizing: border-box;
+  width: 280px;
+  font-size: 14px;
+  font-family: "Open Sans";
+  outline: 0;
+  border: 0;
+  z-index: 1;
+  border-radius: 3px;;
+  padding: 20px;
+  resize: none;
+  background: none;
+}
+
+.spaceOfNotes .note textarea :-ms-input-placeholder {
+  color: black;
+}
+
+.spaceOfNotes .note textarea :-moz-placeholder {
+  color: black      height: 180px;
+}
+
+.spaceOfNotes .note textarea::-webkit-input-placeholder {
+  color: black;
+}
+
+.spaceOfNotes .note textarea::-moz-placeholder {
+  color: black;
+}
+
+.spaceOfNotes .note .footer {
+  display: none;
+}
+
+.spaceOfNotes .note:hover .icoClose {
+  display: block;
+  position: absolute;
+  padding: 4px;
+  right: 10px;
+  top: 10px;
+}
+
+.spaceOfNotes .note:hover .footer {
+  display: block;
+  width: 240px;
+  height: 29px;
+  position: absolute;
+  bottom: 0;
+  margin: 0 20px 0 20px;
+}
+
+.spaceOfNotes .note:hover .footer img {
+  padding: 0 10px 0 0;
+  float: left;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.spaceOfNotes .note:hover .footer img:last-child {
+  padding: 0;
+}
+
+.spaceOfNotes .note:hover .footer .icoColor, .spaceOfNotes .note:hover .footer .icoColorYellow, .spaceOfNotes .note:hover .footer .icoColorGreen, .spaceOfNotes .note:hover .footer .icoColorRed, .spaceOfNotes .note:hover .footer .icoColorBlue, .spaceOfNotes .note:hover .footer .icoPurple, .spaceOfNotes .note:hover .footer .icoColorRed {
+  margin: -1px 0 0 0;
+}
+
+.spaceOfNotes .note:hover .footer .icoColor:hover, .spaceOfNotes .note:hover .footer .icoColorYellow:hover, .spaceOfNotes .note:hover .footer .icoColorGreen:hover, .spaceOfNotes .note:hover .footer .icoColorRed:hover, .spaceOfNotes .note:hover .footer .icoColorBlue:hover, .spaceOfNotes .note:hover .footer .icoPurple:hover, .spaceOfNotes .note:hover .footer .icoColorRed:hover {
+  color: black;
+}
+
+.spaceOfNotes .note:hover .footer .icoAdd {
+  margin: 0 0 0 0;
+}
+
+.spaceOfNotes .note:hover .footer .icoLink {
+  margin: 1px 0 0 0;
+}
+
+.spaceOfNotes .note:hover .footer .icoSave {
+  margin: 0 0 0 0;
+}
+
+.spaceOfNotes .note:hover .footer .icoResize {
+  float: right;
+  margin: 14px -16px 0;
+  cursor: nwse-resize;
+}
+
+.spaceOfNotes .note:hover .footer hr {
+  opacity: 0.05;;
+  background: #000000;;
+  margin: 0 0 10px 0;
+}
+
+.spaceOfNotes .yellow {
+  background-image: linear-gradient(0deg, #FDFADF 83%, #F5F3D8 100%);;
+  box-shadow: 0 1px 0 0 rgba(204,200,137,0.25);;
+}
+        
+  

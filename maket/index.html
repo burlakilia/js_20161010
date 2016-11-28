@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head><!-- Meta-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Favicon-->
+    <link rel="icon" href="favicon.ico" type="image/x-icon"><!-- Styles-->
+    <link rel="stylesheet" href="../lib/pure.css">
+    <link rel="stylesheet" href="styles/css.css">
+</head>
+<body>
+<div class="sideBar">
+    <div class="logo"><img src="img/logo_text.svg"><img src="img/logo_mark.svg"></div>
+    <hr>
+    <div class="menu">
+        <ul>
+            <li><strong>Все заметки</strong></li>
+            <li>Текст</li>
+            <li>Графика</li>
+            <li>Аудио</li>
+            <li>Видео</li>
+            <li>Мои категории
+                <ul>
+                    <li>Новая</li>
+                    <li>Создать заметку</li>
+                </ul>
+            </li>
+            <li>Корзина</li>
+        </ul>
+    </div>
+    <div class="search"><input type="text" placeholder="Поиск по меткам">
+        <button><img src="img/ico_search.svg"></button>
+    </div>
+    <div class="sorting">
+        <ul>
+            <li><strong>Мой порядок</strong></li>
+            <li>По новизне</li>
+            <li>По размеру</li>
+            <li>По длительности</li>
+        </ul>
+    </div>
+    <div class="exit">
+        <hr>
+        <ul>
+            <li>Выйти</li>
+        </ul>
+    </div>
+</div>
+<div class="spaceOfNotes">
+    <div class="note yellow"><img class="icoClose" src="img/ico_close.svg"><textarea placeholder="Текст заметки"
+                                                                                     rows="2"></textarea>
+        <div class="footer"><img class="icoColor" src="img/ico_color.svg"><!--img(src='img/.svg').icoColorYellow-->
+            <!--img(src='img/.svg').icoColorGreen--><!--img(src='img/.svg').icoColorRed-->
+            <!--img(src='img/.svg').icoColorBlue--><!--img(src='img/.svg').icoColorPurple-->
+            <!--img(src='img/.svg').icoColorRed--><img class="icoAdd" src="img/ico_add.svg"><img class="icoLink"
+                                                                                                 src="img/ico_link.svg"><img
+                    class="icoSave" src="img/ico_save.svg"><img class="icoResize" src="img/ico_resize.svg"></div>
+    </div>
+    <div class="note yellow"><img class="icoClose" src="img/ico_close.svg"><textarea placeholder="Текст заметки"
+                                                                                     rows="2"></textarea>
+        <div class="footer"><img class="icoColor" src="img/ico_color.svg"><!--img(src='img/.svg').icoColorYellow-->
+            <!--img(src='img/.svg').icoColorGreen--><!--img(src='img/.svg').icoColorRed-->
+            <!--img(src='img/.svg').icoColorBlue--><!--img(src='img/.svg').icoColorPurple-->
+            <!--img(src='img/.svg').icoColorRed--><img class="icoAdd" src="img/ico_add.svg"><img class="icoLink"
+                                                                                                 src="img/ico_link.svg"><img
+                    class="icoSave" src="img/ico_save.svg"><img class="icoResize" src="img/ico_resize.svg"></div>
+    </div>
+</div><!-- Textarea resize-->
+<script>var textarea = document.querySelector('textarea');
+
+textarea.addEventListener('keydown', autosize);
+
+function autosize() {
+    var el = this;
+    setTimeout(function () {
+        el.style.cssText = 'height:25px';
+        // for box-sizing other than "content-box" use:
+        // el.style.cssText = '-moz-box-sizing:content-box';
+        el.style.cssText = 'height:' + el.scrollHeight + 'px';
+    }, 0);
+}</script>
+</body>
+</html>

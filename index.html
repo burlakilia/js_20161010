@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Проект</title>
-    <script src="./lib/lodash.js"></script>
+    <script defer src="./lib/longscript.js"></script>
+    <script defer src="./lib/tinyscript.js"></script>
+
+
     <link rel="stylesheet" href="./lib/pure.css">
     <link rel="stylesheet" href="./style.css">
 </head>
@@ -30,6 +33,12 @@
     <script src="./menu.js"></script>
 
     <script>
+        document.querySelector('.helloworld')
+    </script>
+
+    <div class="helloworld"></div>
+
+    <script>
         let menu = new Menu(document.querySelector('.container'), {
             title: 'Привет мир',
             options: [
@@ -43,6 +52,8 @@
                 }}
             ]
         });
+
+
     </script>
 
 </body>
