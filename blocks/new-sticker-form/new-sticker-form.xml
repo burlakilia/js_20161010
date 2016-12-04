@@ -1,5 +1,5 @@
 <fest:template xmlns:fest="http://fest.mail.ru">
-    <div class="menu__form">
+    <div class="new-sticker-form__form">
         <input type="text" class="new-sticker-form__title"></input>
         <input type="text" class="new-sticker-form__href"></input>
         <button class="new-sticker-form__submit">Добавить</button>

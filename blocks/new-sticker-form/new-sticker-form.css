@@ -1,11 +1,26 @@
+.new-sticker-form {
+	padding: 20px;
+}
+
+.new-sticker-form input {
+	display: block;
+	width: 200px;
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #e8e8e8;
+	font-family: opensans-regular, Arial, sans-serif;
+	font-size: 14px;
+	color: #000;
+}
+
 .new-sticker-form__submit {
+	font-family: opensans-regular, Arial, sans-serif;
+	font-size: 14px;
 }
+
 .new-sticker-form__title {
-	padding: 3px;
-	border: 1px solid #CCC;
-	color: red;
+
 }
+
 .new-sticker-form__href {
-	padding: 3px;
-	border: 1px solid #CCC;
 }
