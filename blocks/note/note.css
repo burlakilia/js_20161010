@@ -29,6 +29,7 @@
     padding: 20px;
     resize: none;
     background: none;
+    overflow: hidden;
 }
 
 .note__footer {
