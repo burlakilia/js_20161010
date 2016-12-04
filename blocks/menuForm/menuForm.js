@@ -31,6 +31,8 @@
                 href: this.formHref.value
             };
             this.menu.add(options);
+            this.formTitle.value = '';
+            this.formHref.value = '';
         }
         
     }
