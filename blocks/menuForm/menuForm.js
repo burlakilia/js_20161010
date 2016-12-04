@@ -12,12 +12,12 @@
             this.menu= menu;
             this.node = this.render(node);
             
-            this.formButton = document.querySelector('.menu__form_submit');
-            this.formTitle = document.querySelector('.menu__form_title');
-            this.formHref = document.querySelector('.menu__form_href');
+            this.button = this.node.querySelector('.menu__form_submit');
+            this.title = this.node.querySelector('.menu__form_title');
+            this.href = this.node.querySelector('.menu__form_href');
             
             this.onButtonSubmit = this.onButtonSubmit.bind(this);
-            this.formButton.addEventListener('click', this.onButtonSubmit);
+            this.button.addEventListener('click', this.onButtonSubmit);
         }
         
         render(node) {
@@ -27,12 +27,12 @@
         
         onButtonSubmit() {
             const options = {
-                title: this.formTitle.value,
-                href: this.formHref.value
+                title: this.title.value,
+                href: this.href.value
             };
             this.menu.add(options);
-            this.formTitle.value = '';
-            this.formHref.value = '';
+            this.title.value = '';
+            this.href.value = '';
         }
         
     }
