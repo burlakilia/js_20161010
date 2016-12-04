@@ -5,3 +5,16 @@
 .menu__item {
     padding: 7px 0 7px 0;
 }
+
+.menu__link {
+    text-decoration: none;
+    color: black;
+}
+
+.menu__link:hover {
+    text-decoration: underline;
+}
+
+.menu__link_active {
+    font-weight: bold;
+}

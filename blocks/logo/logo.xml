@@ -1,0 +1,8 @@
+<fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
+    <fest:set name="logo">
+        <div class="logo">
+            <img class="logo__title" src="img/logo_text.svg"/>
+            <img class="logo__icon" src="img/logo_mark.svg"/>
+        </div>
+    </fest:set>
+</fest:template>

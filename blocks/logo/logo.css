@@ -1,0 +1,13 @@
+.logo {
+    height: 59px;
+}
+
+.logo__title {
+    float: left;
+    margin-top: 22px;
+}
+
+.logo__icon {
+    float: right;
+    margin-top: 18px;
+}

@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/burlakilia/js_20161010/issues"
   },
-  "homepage": "https://github.com/burlakilia/js_20161010#readme"
+  "homepage": "https://github.com/burlakilia/js_20161010#readme",
+  "dependencies": {
+    "argv": "0.0.2",
+    "glob": "^7.1.1",
+    "jshint": "^2.9.4"
+  }
 }
