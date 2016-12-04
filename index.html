@@ -6,18 +6,23 @@
     <script src="./lib/lodash.js"></script>
     <script src="./blocks/menu/menu.xml.js"></script>
     <script src="./blocks/menu/menu.js"></script>
+    <script src="./blocks/new-sticker-form/new-sticker-form.xml.js"></script>
+    <script src="./blocks/new-sticker-form/new-sticker-form.js"></script>
 
 
     <link rel="stylesheet" href="./lib/pure.css">
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./blocks/menu/menu.css">
+    <link rel="stylesheet" href="./blocks/new-sticker-form/new-sticker-form.css">
 </head>
 <body>
     <h1>Привет мир!!!</h1>
 
     <div class="container"></div>
+    <div class="new-sticker-form__container"></div>
 
     <script>
+        'use strict';
         let menu = new Menu(document.querySelector('.container'), {
             title: 'Привет мир',
             options: [
@@ -36,6 +41,8 @@
             title: 'Графика',
             href: '/graphic'
         });
+
+        let menuForm = new MenuForm(document.querySelector('.new-sticker-form__container'), menu);
 
     </script>
 

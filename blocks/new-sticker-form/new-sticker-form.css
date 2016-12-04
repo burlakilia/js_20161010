@@ -1,0 +1,11 @@
+.new-sticker-form__submit {
+}
+.new-sticker-form__title {
+	padding: 3px;
+	border: 1px solid #CCC;
+	color: red;
+}
+.new-sticker-form__href {
+	padding: 3px;
+	border: 1px solid #CCC;
+}
