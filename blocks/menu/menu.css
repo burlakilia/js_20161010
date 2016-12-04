@@ -1,7 +1,50 @@
+.menu {
+    background-color: #fafafa;
+}
+
+@media screen and (min-width: 768px) {
+
+    .menu {
+        flex-basis: 280px;
+        flex-shrink: 0;
+    }
+}
+
 .menu__list {
-    margin-top: 17px;
+    list-style: none;
+    padding: 0 40px;
 }
 
 .menu__item {
+    border-top: 1px solid #e8e8e8;
     padding: 7px 0 7px 0;
+    position: relative;
+}
+
+.menu__item_main::before {
+    content: "";
+    display: block;
+    width: 14px;
+    height: 10px;
+    background: url("../../img/icon-menu-main.svg");
+    position: absolute;
+    top: 21px;
+    left: -27px;
+}
+
+.menu__item:last-child {
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.menu__item a {
+    display: block;
+    padding: 10px 0;
+    color: #000;
+    text-decoration: none;
+    transition-duration: 0.2s;
+}
+
+.menu__item a:hover,
+.menu__item a:hover:active {
+    opacity: 0.5;
 }
