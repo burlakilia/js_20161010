@@ -1,0 +1,7 @@
+<fest:template xmlns:fest="http://fest.mail.ru">
+    <form class="form js-form">
+        <input type="text" class="form__title" name="title"></input>
+        <input type="text" class="form__link" name="link"></input>
+        <button class="form__submit">Добавить</button>
+    </form>
+</fest:template>

@@ -1,0 +1,15 @@
+<fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
+    <div class="note note_{json.color}">
+        <img class="note__close" src="img/ico_close.svg"/>
+        <textarea class="note__text" placeholder="Введите текст заметки" rows="6" maxlength="119">
+            <fest:value>json.text</fest:value>
+        </textarea>
+
+        <div class="note__footer">
+            <img class="note__button note__button_color js-set-color" src="img/ico_color.svg"/>
+            <img class="note__button note__button_add-new js-add-new" src="img/ico_add.svg"/>
+            <img class="note__button note__button_link js-get-link" src="img/ico_link.svg"/>
+            <img class="note__button note__button_save js-save" src="img/ico_save.svg"/>
+        </div>
+    </div>
+</fest:template>

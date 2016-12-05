@@ -5,43 +5,29 @@
     <title>Проект</title>
     <script src="./lib/lodash.js"></script>
     <script src="./blocks/menu/menu.xml.js"></script>
+    <script src="./blocks/form/form.xml.js"></script>
+    <script src="./blocks/note/note.xml.js"></script>
+    <script src="./blocks/app/app.xml.js"></script>
     <script src="./blocks/menu/menu.js"></script>
-    <script src="./blocks/menuForm/menuForm.xml.js"></script>
-    <script src="./blocks/menuForm/menuForm.js"></script>
+    <script src="./blocks/form/form.js"></script>
+    <script src="./blocks/note/note.js"></script>
+    <script src="./blocks/app/app.js"></script>
 
 
     <link rel="stylesheet" href="./lib/pure.css">
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./blocks/menu/menu.css">
-    <link rel="stylesheet" href="./blocks/menuForm/menuForm.css">
+    <link rel="stylesheet" href="./blocks/form/form.css">
+    <link rel="stylesheet" href="./blocks/note/note.css">
+    <link rel="stylesheet" href="./blocks/app/app.css">
 </head>
 <body>
-    <h1>Привет мир!!!</h1>
-
     <div class="container"></div>
+    <div class="container2"></div>
     <div class="menu__form__container"></div>
 
     <script>
-        let menu = new Menu(document.querySelector('.container'), {
-            title: 'Привет мир',
-            options: [
-                {
-                    title: 'Все заметки',
-                    href: '/all'
-                },
-                {
-                    title: 'Текст',
-                    href: '/text'
-                }
-            ]
-        });
 
-        menu.add({
-            title: 'Графика',
-            href: '/graphic'
-        });
-
-        let menuForm = new MenuForm(document.querySelector('.menu__form__container'), menu);
     </script>
 
 </body>
