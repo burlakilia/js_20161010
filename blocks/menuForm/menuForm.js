@@ -27,12 +27,15 @@
         
         onButtonSubmit() {
             const options = {
-                title: this.title.value,
-                href: this.href.value
+                title: this.title.value.trim(),
+                href: this.href.value.trim()
             };
-            this.menu.add(options);
-            this.title.value = '';
-            this.href.value = '';
+            
+            if ( options.title || options.href ) {
+                this.menu.add(options);
+                this.title.value = '';
+                this.href.value = '';
+            }
         }
         
     }
