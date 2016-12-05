@@ -6,7 +6,7 @@
                     <fest:script>
                         console.log(item, json.active);
                     </fest:script>
-                    <a class="menu__link js-{item.name}" href="/#{item.name}">
+                    <a class="menu__link js-{item.name}" href="#{item.name}">
                         <fest:value>item.title</fest:value>
                     </a>
                 </li>
