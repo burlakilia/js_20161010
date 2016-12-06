@@ -55,6 +55,10 @@
 
         setRoute (route) {
             this.menu.toggleActive(route);
+            
+            if (route) {
+                this.notesFilter(route);
+            }
         }
 
         render () {
@@ -88,9 +92,7 @@
         let app = new App(document.body);
 
         window.addEventListener('hashchange', () => {
-            const route = location.hash.replace('#', '');
-            app.notesFilter(route);
-            app.setRoute(route);
+            app.setRoute(location.hash.replace('#', ''));
         });
 
     });
