@@ -1,0 +1,136 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  list-style: none; }
+
+body {
+  font-family: "Open Sans";
+  font-size: 14px;
+  /*background-image: url("../img/grid.png") */ }
+
+strong {
+  font-weight: bold; }
+
+.app__sidebar {
+  display: inline-block;
+  position: absolute;
+  width: 200px;
+  height: 100%;
+  padding: 0 0 0 40px; }
+
+.app__hr {
+  border: none;
+  padding: 0;
+  margin: 0;
+  height: 1px;
+  background: #F2F2F2; }
+
+.app__notes {
+  height: 100%;
+  margin: 0 0 0 280px;
+  padding: 20px; }
+
+.app__note {
+  display: inline-block; }
+
+.app__logo {
+  height: 59px; }
+
+.app__title {
+  float: left;
+  margin-top: 22px; }
+
+.app__icon {
+  float: right;
+  margin-top: 18px; }
+
+.form__input {
+  box-sizing: border-box;
+  width: 240px;
+  height: 40px;
+  border: 1px solid #E8E8E8;
+  margin: 21px 0 0 -20px;
+  padding: 0 0 2px 20px;
+  font-family: "Open Sans";
+  font-size: 14px;
+  color: black;
+  outline: none;
+  border-radius: 3px; }
+
+.menu__list {
+  margin-top: 17px; }
+
+.menu__item {
+  padding: 7px 0 7px 0; }
+
+.menu__link {
+  text-decoration: none;
+  color: black; }
+
+.menu__link:hover {
+  text-decoration: underline; }
+
+.menu__link_active {
+  font-weight: bold; }
+
+.note {
+  cursor: move;
+  position: relative;
+  margin: 20px;
+  width: 280px;
+  height: 180px;
+  display: inline-block; }
+
+.note_yellow {
+  background-image: linear-gradient(0deg, #FDFADF 83%, #F5F3D8 100%);
+  box-shadow: 0 1px 0 0 rgba(204, 200, 137, 0.25); }
+
+.note__close {
+  display: none;
+  cursor: pointer; }
+
+.note__text {
+  box-sizing: border-box;
+  width: 280px;
+  font-size: 14px;
+  font-family: "Open Sans";
+  outline: 0;
+  border: 0;
+  z-index: 1;
+  border-radius: 3px;
+  padding: 20px;
+  resize: none;
+  background: none;
+  overflow: hidden; }
+
+.note__footer {
+  display: none; }
+
+.note:hover .note__footer {
+  display: block;
+  width: 240px;
+  height: 29px;
+  position: absolute;
+  bottom: 0;
+  margin: 0 20px 0 20px; }
+
+.note__button {
+  float: left;
+  cursor: pointer;
+  padding: 4px; }
+
+.note__button_color {
+  margin: -1px 0 0 0; }
+
+.note__button_add-new {
+  margin: 0 0 0 0; }
+
+.note__button_link {
+  margin: 1px 0 0 0; }
+
+.note__button_save {
+  margin: 2px 0 0 0; }

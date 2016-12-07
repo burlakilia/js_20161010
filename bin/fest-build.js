@@ -23,7 +23,7 @@ glob(args.options.dir + '/**/*.xml', function (err, list) {
     }
 
     list.forEach( template => {
-        fs.writeFileSync(template + '.js', ' if (!fest) { var fest = {}; } fest["' + template.match(/([^\/]+)\.xml$/)[1] +  '"] = ' + fest.compile(template, {beautify: false}));
+        fs.writeFileSync(template + '.js', 'export default ' + fest.compile(template, {beautify: false}) + ';');
     });
 
     console.log(list)

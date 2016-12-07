@@ -4,7 +4,14 @@
   "description": "Учебный проект по группе learn.javascript.ru",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "fest": "node bin/fest-build.js --dir=./blocks",
+    "prod": "npm run fest && webpack && npm run sass",
+    "watch": "npm-watch",
+    "sass": "./node_modules/.bin/node-sass -o ./public/ ./blocks/app/app.scss"
+  },
+  "watch": {
+    "prod": "./blocks/**/*.xml"
   },
   "repository": {
     "type": "git",
@@ -18,7 +25,13 @@
   },
   "homepage": "https://github.com/burlakilia/js_20161010#readme",
   "devDependencies": {
+    "babel-core": "^6.10.4",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.10.3",
+    "babel-preset-es2015": "^6.9.0",
+    "fest": "^0.12.1",
     "jshint": "^2.9.4",
-    "fest": "^0.12.1"
+    "node-sass": "^3.13.0",
+    "node-static": "0.7.9"
   }
 }
