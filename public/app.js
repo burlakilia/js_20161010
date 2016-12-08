@@ -507,7 +507,7 @@
 			if (cp) for (var i in params) {
 				if (typeof params[i] == "function" && params[i].param) params[i] = params[i]();
 			}return fn.call(__fest_self, params);
-		}__fest_buf += "<form class=\"form js-form\"><input type=\"text\" placeholder=\"Новая категория\" class=\"form__input\" name=\"title\"/><button class=\"form__submit\">Добавить</button></form>";__fest_to = __fest_chunks.length;if (__fest_to) {
+		}__fest_buf += "<form class=\"form js-form\"><input type=\"text\" placeholder=\"Новая категория\" class=\"form__input\" name=\"title\"/></form>";__fest_to = __fest_chunks.length;if (__fest_to) {
 			__fest_iterator = 0;for (; __fest_iterator < __fest_to; __fest_iterator++) {
 				__fest_chunk = __fest_chunks[__fest_iterator];if (typeof __fest_chunk === "string") {
 					__fest_html += __fest_chunk;
