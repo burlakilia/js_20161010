@@ -19,7 +19,6 @@ let transliterate = (function () {
 class Form {
 
     constructor(node, menu) {
-
         this.menu= menu;
         this.node = this.render(node);
 

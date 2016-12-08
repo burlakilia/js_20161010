@@ -11,7 +11,7 @@
     "sass": "./node_modules/.bin/node-sass -o ./public/ ./blocks/app/app.scss"
   },
   "watch": {
-    "prod": "./blocks/**/*.xml"
+    "prod": "./blocks/**/*"
   },
   "repository": {
     "type": "git",
@@ -32,6 +32,8 @@
     "fest": "^0.12.1",
     "jshint": "^2.9.4",
     "node-sass": "^3.13.0",
-    "node-static": "0.7.9"
+    "node-static": "0.7.9",
+    "sass-loader": "^4.0.2",
+    "webpack": "^1.14.0"
   }
 }

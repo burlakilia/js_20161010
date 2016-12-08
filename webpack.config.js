@@ -9,17 +9,18 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.css$/,
-                loader: 'style-loader!css-loader'
-            },
-            {
                 test: /\.js$/,
                 loader: 'babel',
                 query: {
                     presets: ['es2015']
                 }
             },
-            { test: /\.jade$/, loader: "jade" }
+            {
+                test: /\.scss$/,
+                loaders: ["style", "css", "sass"]
+            }
+
         ]
-    }
+    },
+    watch: true
 };
