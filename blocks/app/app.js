@@ -45,17 +45,26 @@ import template from './app.xml.js';
                 this.menu.add(event.detail);
             });
 
-            notesData.forEach( item => this.addNote(item) );
+            this.renderNotes(notesData);
 
             this.setRoute(location.hash.replace('#', ''));
         }
 
         setRoute (route) {
             this.menu.toggleActive(route);
+            
+            if (route) {
+                this.notesFilter(route);
+            }
         }
 
         render () {
             this.node.innerHTML = template();
+        }
+        
+        renderNotes (data) {
+            document.querySelector('.js-notes').innerHTML = '';
+            data.forEach( item => this.addNote(item) );
         }
 
         addNote (item) {
@@ -65,11 +74,19 @@ import template from './app.xml.js';
             this.notes.push(note);
             this.node.querySelector('.js-notes').appendChild(div);
         }
+        
+        notesFilter (route) {
+            const filterData = notesData.filter((note) => {
+                return note.tags.indexOf(route) !== -1;
+            });
+            
+            this.renderNotes(filterData);
+        }
 
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-        var app = new App(document.body);
+        let app = new App(document.body);
 
     window.addEventListener('hashchange', () => {
         app.setRoute(location.hash.replace('#', ''));
