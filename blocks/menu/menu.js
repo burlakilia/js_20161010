@@ -1,10 +1,8 @@
-
-// import fest.MenuTemplate
 import template from './menu.xml.js';
 
 
 class Menu {
-
+ 
     constructor(node, data) {
         this.data = JSON.parse(JSON.stringify(data));
 

@@ -154,8 +154,6 @@
 	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	// import fest.MenuTemplate
-
 
 	var _menuXml = __webpack_require__(2);
 
@@ -322,10 +320,6 @@
 			__fest_iterator = {};__fest_log_error(e.message);
 		}for (i in __fest_iterator0) {
 			item = __fest_iterator0[i];__fest_buf += "<li class=\"menu__item\">";try {
-				console.log(item, json.active);
-			} catch (e) {
-				__fest_log_error(e.message);
-			}try {
 				__fest_attrs[0] = __fest_escapeHTML(item.name);
 			} catch (e) {
 				__fest_attrs[0] = "";__fest_log_error(e.message);
@@ -336,7 +330,7 @@
 			}__fest_buf += "<a class=\"menu__link js-" + __fest_attrs[0] + "\" href=\"#" + __fest_attrs[1] + "\">";try {
 				__fest_buf += __fest_escapeHTML(item.title);
 			} catch (e) {
-				__fest_log_error(e.message + "9");
+				__fest_log_error(e.message + "6");
 			}__fest_buf += "</a></li>";
 		}__fest_buf += "</ul></div>";__fest_to = __fest_chunks.length;if (__fest_to) {
 			__fest_iterator = 0;for (; __fest_iterator < __fest_to; __fest_iterator++) {
@@ -355,7 +349,7 @@
 /* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -373,6 +367,20 @@
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+	//Если с английского на русский, то передаём вторым параметром true.
+	var transliterate = function () {
+	    var rus = "щ   ш  ч  ц  ю  я  ё  ж  ъ  ы  э  а б в г д е з и й к л м н о п р с т у ф х ь".split(/ +/g),
+	        eng = "shh sh ch cz yu ya yo zh `` y' e` a b v g d e z i j k l m n o p r s t u f x `".split(/ +/g);
+	    return function (text, engToRus) {
+	        var x;
+	        for (x = 0; x < rus.length; x++) {
+	            text = text.split(engToRus ? eng[x] : rus[x]).join(engToRus ? rus[x] : eng[x]);
+	            text = text.split(engToRus ? eng[x].toUpperCase() : rus[x].toUpperCase()).join(engToRus ? rus[x].toUpperCase() : eng[x].toUpperCase());
+	        }
+	        return text;
+	    };
+	}();
+
 	var Form = function () {
 	    function Form(node, menu) {
 	        _classCallCheck(this, Form);
@@ -385,20 +393,20 @@
 	    }
 
 	    _createClass(Form, [{
-	        key: 'render',
+	        key: "render",
 	        value: function render(node) {
 	            node.innerHTML = (0, _formXml2.default)();
 	            return node;
 	        }
 	    }, {
-	        key: 'onSubmit',
+	        key: "onSubmit",
 	        value: function onSubmit(event) {
 	            event.preventDefault();
 
 	            this.node.dispatchEvent(new CustomEvent('add-new', {
 	                detail: {
 	                    title: this.form.elements.title.value,
-	                    name: this.form.elements.link.value
+	                    name: transliterate(this.form.elements.title.value).toLowerCase()
 	                },
 	                bubbles: true,
 	                cancelable: true
@@ -498,7 +506,7 @@
 			if (cp) for (var i in params) {
 				if (typeof params[i] == "function" && params[i].param) params[i] = params[i]();
 			}return fn.call(__fest_self, params);
-		}__fest_buf += "<form class=\"form js-form\"><input type=\"text\" class=\"form__title\" name=\"title\"/><input type=\"text\" class=\"form__link\" name=\"link\"/><button class=\"form__submit\">Добавить1</button></form>";__fest_to = __fest_chunks.length;if (__fest_to) {
+		}__fest_buf += "<form class=\"form js-form\"><input type=\"text\" placeholder=\"Новая категория\" class=\"form__input\" name=\"title\"/></form>";__fest_to = __fest_chunks.length;if (__fest_to) {
 			__fest_iterator = 0;for (; __fest_iterator < __fest_to; __fest_iterator++) {
 				__fest_chunk = __fest_chunks[__fest_iterator];if (typeof __fest_chunk === "string") {
 					__fest_html += __fest_chunk;
@@ -748,7 +756,7 @@
 			if (cp) for (var i in params) {
 				if (typeof params[i] == "function" && params[i].param) params[i] = params[i]();
 			}return fn.call(__fest_self, params);
-		}var json = __fest_context;__fest_buf += "<div class=\"app\"><div class=\"app__sidebar\"><div class=\"app__logo\"><img class=\"app__title\" src=\"img\/logo_text.svg\"/><img class=\"app__icon\" src=\"img\/logo_mark.svg\"/></div><hr class=\"app__hr\"/><div class=\"app__menu js-menu\"></div><div class=\"app__form js-menu-form\"></div></div><div class=\"app__notes js-notes\"></div></div>";__fest_to = __fest_chunks.length;if (__fest_to) {
+		}var json = __fest_context;__fest_buf += "<div class=\"app\"><div class=\"app__sidebar\"><div class=\"app__logo\"><img class=\"app__title\" src=\"img\/logo_text.svg\"/><img class=\"app__icon\" src=\"img\/logo_mark.svg\"/></div><hr class=\"app__hr\"/><div class=\"app__menu js-menu\"></div><div class=\"app__form js-menu-form\"></div><hr class=\"app__hr\"/></div><div class=\"app__notes js-notes\"></div></div>";__fest_to = __fest_chunks.length;if (__fest_to) {
 			__fest_iterator = 0;for (; __fest_iterator < __fest_to; __fest_iterator++) {
 				__fest_chunk = __fest_chunks[__fest_iterator];if (typeof __fest_chunk === "string") {
 					__fest_html += __fest_chunk;

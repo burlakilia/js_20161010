@@ -8,6 +8,7 @@
             <hr class="app__hr"/>
             <div class="app__menu js-menu"></div>
             <div class="app__form js-menu-form"></div>
+            <hr class="app__hr"/>
         </div>
         <div class="app__notes js-notes"></div>
     </div>
