@@ -2,6 +2,6 @@
     <form class="form js-form">
         <input type="text" class="form__title" name="title"></input>
         <input type="text" class="form__link" name="link"></input>
-        <button class="form__submit">Добавить</button>
+        <button class="form__submit">Добавить1</button>
     </form>
 </fest:template>

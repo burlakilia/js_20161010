@@ -1,20 +1,17 @@
-(() => {
-    'use strict';
-    let template = window.fest['note'];
-    
-    class Note {
+import template from './note.xml.js';
 
-        constructor (node, data) {
-            this.node = node;
-            this.data = data;
-            this.render();
-        }
-        
-        render () {
-            this.node.innerHTML = template(this.data);
-        }
-        
+class Note {
+
+    constructor (node, data) {
+        this.node = node;
+        this.data = data;
+        this.render();
     }
 
-    window.Note = Note;
-})();
+    render () {
+        this.node.innerHTML = template(this.data);
+    }
+
+}
+
+export { Note };

@@ -1,43 +1,37 @@
+// import fest.form
+import template from './form.xml.js';
 
-'use strict';
+class Form {
 
-(() => {
+    constructor(node, menu) {
 
-    // import fest.form
-    let template = window.fest['form'];
+        this.menu= menu;
+        this.node = this.render(node);
 
-    class Form {
+        this.form = this.node.querySelector('.js-form');
+        this.form.addEventListener('submit', this.onSubmit.bind(this));
+    }
 
-        constructor(node, menu) {
+    render(node) {
+        node.innerHTML = template();
+        return node;
+    }
 
-            this.menu= menu;
-            this.node = this.render(node);
+    onSubmit(event) {
+        event.preventDefault();
 
-            this.form = this.node.querySelector('.js-form');
-            this.form.addEventListener('submit', this.onSubmit.bind(this));
-        }
-
-        render(node) {
-            node.innerHTML = template();
-            return node;
-        }
-
-        onSubmit(event) {
-            event.preventDefault();
-
-            this.node.dispatchEvent(new CustomEvent('add-new', {
-                    detail: {
-                        title: this.form.elements.title.value,
-                        name: this.form.elements.link.value
-                    },
-                    bubbles: true,
-                    cancelable: true
-                }
-            ));
-
-        }
+        this.node.dispatchEvent(new CustomEvent('add-new', {
+                detail: {
+                    title: this.form.elements.title.value,
+                    name: this.form.elements.link.value
+                },
+                bubbles: true,
+                cancelable: true
+            }
+        ));
 
     }
 
-    window.Form = Form;
-})();
+}
+
+export { Form };
