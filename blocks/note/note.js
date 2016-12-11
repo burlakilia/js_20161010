@@ -2,10 +2,9 @@ import template from './note.xml.js';
 
 class Note {
 
-    constructor (node, data, id) {
+    constructor (node, data) {
         this.node = node;
         this.data = data;
-        this.data.id = id;
         this.render();
     }
 
