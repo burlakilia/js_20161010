@@ -18,12 +18,14 @@ import template from './app.xml.js';
 
     let notesData = [
         {
+            id: 1,
             type: 'text',
             text: '1234',
             color: 'yellow',
             tags: ['text', 'all']
         },
         {
+            id: 2,
             type: 'text',
             text: '2345',
             color: 'yellow',
@@ -64,41 +66,63 @@ import template from './app.xml.js';
         
         renderNotes (data) {
             document.querySelector('.js-notes').innerHTML = '';
-            data.forEach( (item, index) => this.addNote(item, index) );
+            data.forEach( item => this.addNote(item) );
         }
 
-        addNote (item, id) {
+        addNote (item) {
             let div = document.createElement('div');
-            let note = new Note(div, item, id);
+            let note = new Note(div, item);
 
             this.notes.push(note);
-            const nodeNote = this.node.querySelector('.js-notes').appendChild(div);
+            const noteNode = this.node.querySelector('.js-notes').appendChild(div);
     
-            nodeNote.querySelector('.js-close').addEventListener('click', this.delNote.bind(this));
+            noteNode.querySelector('.js-close').addEventListener('click', this.delNote.bind(this));
+            noteNode.querySelector('.js-add-new').addEventListener('click', this.newNote.bind(this));
+            noteNode.querySelector('.note__text').addEventListener('change', this.saveNoteText.bind(this));
+        }
     
-            nodeNote.querySelector('.js-add-new').addEventListener('click', this.newNote.bind(this));
+        indexOfNoteInNotesData (event) {
+            const noteNode = event.target.parentNode;
+            const noteId = noteNode.dataset.id;
+    
+            return notesData.findIndex( note => note.id === +noteId );
         }
         
         delNote (event) {
-            const nodeNote = event.target.parentNode;
-            const delNoteId = nodeNote.dataset.id;
-            notesData.splice(delNoteId, 1);
-            nodeNote.remove();
+            
+            notesData.splice(this.indexOfNoteInNotesData(event), 1);
+    
+            event.target.parentNode.remove();
         }
         
         newNote () {
             let tags = ['all'];
             const pageLocation = '' || location.hash.replace('#', '');
-            tags = pageLocation ? tags.push(pageLocation) : tags;
+            if (pageLocation) {
+                tags.push(pageLocation);
+            }
+            
+            let id = 1; //если заметок нет
+            id = notesData.slice(-1)[0].id + 1 || id;
+            
             const newNoteData = {
+                id: id,
                 type: 'text',
                 color: 'yellow',
                 tags: tags
             };
             
             notesData.push(newNoteData);
-            this.renderNotes(notesData);
+    
+            pageLocation ? this.notesFilter(pageLocation) : this.renderNotes(notesData);
         }
+        
+        saveNoteText (event) {
+            
+            notesData[this.indexOfNoteInNotesData(event)].text = event.target.value;
+            
+        }
+        
         notesFilter (route) {
             const filterData = notesData.filter((note) => {
                 return note.tags.indexOf(route) !== -1;
