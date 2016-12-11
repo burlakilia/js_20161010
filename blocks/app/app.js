@@ -18,18 +18,22 @@ import template from './app.xml.js';
 
     let notesData = [
         {
+            id: 1,
             type: 'text',
             text: '1234',
             color: 'yellow',
             tags: ['text', 'all']
         },
         {
+            id: 2,
             type: 'text',
             text: '2345',
             color: 'yellow',
             tags: ['text']
         }
     ];
+    
+    const notesColors = ['yellow', 'green'];
 
     class App {
 
@@ -72,7 +76,27 @@ import template from './app.xml.js';
             let note = new Note(div, item);
 
             this.notes.push(note);
-            this.node.querySelector('.js-notes').appendChild(div);
+            const nodeNote = this.node.querySelector('.js-notes').appendChild(div);
+    
+            nodeNote.querySelector('.js-set-color').addEventListener('click', this.setColorNote.bind(this));
+        }
+        
+        setColorNote (event) {
+            const nodeNote = event.target.parentNode.parentNode;
+            const noteId = nodeNote.dataset.id;
+            
+            const indexOfNoteInNotesData = notesData.findIndex( note => note.id === +noteId );
+            
+            const currentColor = notesData[indexOfNoteInNotesData].color;
+    
+            // если последний цвет в массиве, то берем первый
+            let newColor = notesColors[0];
+            newColor = notesColors[notesColors.indexOf(currentColor) + 1] || newColor;
+            
+            notesData[indexOfNoteInNotesData].color = newColor;
+            
+            nodeNote.classList.remove(`note_${currentColor}`);
+            nodeNote.classList.add(`note_${newColor}`);
         }
         
         notesFilter (route) {
