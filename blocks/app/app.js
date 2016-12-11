@@ -30,6 +30,8 @@ import template from './app.xml.js';
             tags: ['text']
         }
     ];
+    
+    const notesColors = ['yellow', 'green'];
 
     class App {
 
@@ -64,15 +66,29 @@ import template from './app.xml.js';
         
         renderNotes (data) {
             document.querySelector('.js-notes').innerHTML = '';
-            data.forEach( item => this.addNote(item) );
+            data.forEach( (item, index) => this.addNote(item, index) );
         }
 
-        addNote (item) {
+        addNote (item, id) {
             let div = document.createElement('div');
-            let note = new Note(div, item);
+            let note = new Note(div, item, id);
 
             this.notes.push(note);
-            this.node.querySelector('.js-notes').appendChild(div);
+            const nodeNote = this.node.querySelector('.js-notes').appendChild(div);
+    
+            nodeNote.querySelector('.js-set-color').addEventListener('click', this.setColorNote.bind(this));
+        }
+        
+        setColorNote (event) {
+            const nodeNote = event.target.parentNode.parentNode;
+            const noteId = nodeNote.dataset.id;
+            
+            const currentColor = notesData[noteId].color;
+            
+            const newColor = notesColors[notesColors.indexOf(currentColor) + 1];
+            
+            nodeNote.classList.remove(`note_${currentColor}`);
+            nodeNote.classList.add(`note_${newColor}`);
         }
         
         notesFilter (route) {

@@ -1,5 +1,5 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
-    <div class="note note_{json.color}">
+    <div class="note note_{json.color}" data-id="{json.id}">
         <img class="note__close" src="img/ico_close.svg"/>
         <textarea class="note__text" placeholder="Введите текст заметки" rows="6" maxlength="119">
             <fest:value>json.text</fest:value>

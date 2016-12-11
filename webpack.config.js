@@ -4,6 +4,8 @@ module.exports = {
         path: "./public/",
         filename: "app.js"
     },
+    
+    devtool: 'inline-source-map',
 
     module: {
 
