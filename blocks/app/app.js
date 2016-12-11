@@ -85,7 +85,10 @@ import template from './app.xml.js';
             
             const currentColor = notesData[noteId].color;
             
-            const newColor = notesColors[notesColors.indexOf(currentColor) + 1];
+            let newColor = notesColors[0];
+            newColor = notesColors[notesColors.indexOf(currentColor) + 1] || newColor;
+            
+            notesData[noteId].color = newColor;
             
             nodeNote.classList.remove(`note_${currentColor}`);
             nodeNote.classList.add(`note_${newColor}`);
