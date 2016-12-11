@@ -91,7 +91,11 @@ strong {
 
 .note__close {
   display: none;
+  float: right;
   cursor: pointer; }
+
+.note:hover .note__close {
+  display: block; }
 
 .note__text {
   box-sizing: border-box;
