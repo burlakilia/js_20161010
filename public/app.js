@@ -101,9 +101,7 @@
 	            _this.menu.add(event.detail);
 	        });
 
-	        notesData.forEach(function (item) {
-	            return _this.addNote(item);
-	        });
+	        this.renderNotes(notesData);
 
 	        this.setRoute(location.hash.replace('#', ''));
 	    }
@@ -112,11 +110,25 @@
 	        key: 'setRoute',
 	        value: function setRoute(route) {
 	            this.menu.toggleActive(route);
+
+	            if (route) {
+	                this.notesFilter(route);
+	            }
 	        }
 	    }, {
 	        key: 'render',
 	        value: function render() {
 	            this.node.innerHTML = (0, _appXml2.default)();
+	        }
+	    }, {
+	        key: 'renderNotes',
+	        value: function renderNotes(data) {
+	            var _this2 = this;
+
+	            document.querySelector('.js-notes').innerHTML = '';
+	            data.forEach(function (item) {
+	                return _this2.addNote(item);
+	            });
 	        }
 	    }, {
 	        key: 'addNote',
@@ -126,6 +138,15 @@
 
 	            this.notes.push(note);
 	            this.node.querySelector('.js-notes').appendChild(div);
+	        }
+	    }, {
+	        key: 'notesFilter',
+	        value: function notesFilter(route) {
+	            var filterData = notesData.filter(function (note) {
+	                return note.tags.indexOf(route) !== -1;
+	            });
+
+	            this.renderNotes(filterData);
 	        }
 	    }]);
 
@@ -411,6 +432,8 @@
 	                bubbles: true,
 	                cancelable: true
 	            }));
+
+	            this.form.clear();
 	        }
 	    }]);
 
