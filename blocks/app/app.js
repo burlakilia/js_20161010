@@ -33,6 +33,8 @@ import template from './app.xml.js';
         }
     ];
 
+    const notesColors = ['yellow', 'green'];
+
     class App {
 
         constructor (node) {
@@ -78,19 +80,20 @@ import template from './app.xml.js';
     
             noteNode.querySelector('.js-close').addEventListener('click', this.delNote.bind(this));
             noteNode.querySelector('.js-add-new').addEventListener('click', this.newNote.bind(this));
+            noteNode.querySelector('.js-set-color').addEventListener('click', this.setColorNote.bind(this));
             noteNode.querySelector('.note__text').addEventListener('change', this.saveNoteText.bind(this));
         }
     
-        indexOfNoteInNotesData (event) {
-            const noteNode = event.target.parentNode;
+        indexOfNoteInNotesData (noteNode) {
             const noteId = noteNode.dataset.id;
     
             return notesData.findIndex( note => note.id === +noteId );
         }
         
         delNote (event) {
+            const noteNode = event.target.parentNode;
             
-            notesData.splice(this.indexOfNoteInNotesData(event), 1);
+            notesData.splice(this.indexOfNoteInNotesData(noteNode), 1);
     
             event.target.parentNode.remove();
         }
@@ -118,9 +121,25 @@ import template from './app.xml.js';
         }
         
         saveNoteText (event) {
+            const noteNode = event.target.parentNode;
+
+            notesData[this.indexOfNoteInNotesData(noteNode)].text = event.target.value;
             
-            notesData[this.indexOfNoteInNotesData(event)].text = event.target.value;
+        }
+
+        setColorNote (event) {
+            const noteNode = event.target.parentNode.parentNode;
             
+            const currentColor = notesData[this.indexOfNoteInNotesData(noteNode)].color;
+    
+            // если последний цвет в массиве, то берем первый
+            let newColor = notesColors[0];
+            newColor = notesColors[notesColors.indexOf(currentColor) + 1] || newColor;
+            
+            notesData[this.indexOfNoteInNotesData(noteNode)].color = newColor;
+            
+            noteNode.classList.remove(`note_${currentColor}`);
+            noteNode.classList.add(`note_${newColor}`);
         }
         
         notesFilter (route) {
