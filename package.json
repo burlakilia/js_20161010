@@ -34,6 +34,7 @@
     "node-sass": "^3.13.0",
     "node-static": "0.7.9",
     "sass-loader": "^4.0.2",
-    "webpack": "^1.14.0"
+    "webpack": "^1.14.0",
+    "argv": "^0.0.2"
   }
 }
