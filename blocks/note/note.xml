@@ -2,7 +2,7 @@
     <div class="note note_{json.color}" data-id="{json.id}">
         <img class="note__close js-close" src="img/ico_close.svg"/>
         <textarea class="note__text" placeholder="Введите текст заметки" rows="6" maxlength="119">
-            <fest:value>json.text</fest:value>
+            <fest:value>json.name</fest:value>
         </textarea>
 
         <div class="note__footer">
