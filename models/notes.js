@@ -35,7 +35,7 @@ class NotesModel {
             ._send('GET')
             .then( list => {
                 this.data = list;
-                return 'hello world';
+                return list;
             });
     }
 
